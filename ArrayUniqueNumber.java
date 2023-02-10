@@ -1,4 +1,3 @@
-package pkg_09_02_23;
 import java.util.Arrays;
 import java.util.Scanner;
 public class ArrayUniqueNumber {
