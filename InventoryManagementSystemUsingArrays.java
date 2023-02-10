@@ -1,7 +1,4 @@
-package pkg_09_02_23;
-
 import java.util.Scanner;
-
 public class InventoryManagementSystemUsingArrays {
 	static Scanner sc = new Scanner(System.in);
 	static String[] items = new String[50];
