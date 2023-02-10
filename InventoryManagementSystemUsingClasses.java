@@ -1,4 +1,4 @@
-package pkg_09_02_23;
+
 import java.util.*;
 class InventoryManagement{
 	Scanner sc = new Scanner(System.in);
