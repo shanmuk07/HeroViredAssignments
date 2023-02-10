@@ -1,4 +1,3 @@
-package pkg_09_02_23;
 import java.util.Scanner;
 public class ArrayMissingNumbers {
 	public static void missingNumbers(int[] arr, int n) {
