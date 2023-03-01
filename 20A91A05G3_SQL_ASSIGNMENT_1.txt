@@ -1,0 +1,101 @@
+QUESTION-1:
+-----------
+
+show user							//	--> shows the current user or database
+
+create user Employee identified by system;	//	--> creates a database with name as "Employee"
+
+alter user Employee identified by Employee123;	//	--> Modifies the password as Employee123
+
+grant create session to Employee;			//	--> Grants the create session permission to employee
+
+grant create table to Employee;			//	--> Grants the create table permission to employee
+
+grant unlimited tablespace to Employee;		//	--> Grants unlimited table space to employee.
+
+connect Employee/Employee123;				//	--> Connects with the employee database.
+
+
+
+// Query for creating a Employee_Details table with EMP_ID, EMP_NAME, JOB_NAME, MANAGER_ID, HIRE_DATE, SALARY, DEPT_ID
+
+create table Employee_Details(Emp_Id number(5), Emp_Name varchar2(30), Job_Name varchar2(30), Manager_Id number(5), hire_date date, salary number(7, 2), Dept_id number(4));
+
+// Query for inserting 10 records of data into table Employee_Details
+
+INSERT INTO Employee_Details values (20001, 'Shanmukh', 'Manager', 63012, '01-nov-2020', 60000.00, 1001);
+INSERT INTO Employee_Details values (20002, 'Ajay', 'Assistant Manager', 63012, '26-nov-2021', 46000.00, 1001);
+INSERT INTO Employee_Details values(20003, 'Harish', 'Sales Representative', 63001, '25-jan-2021', 30000.70, 2001);
+INSERT INTO Employee_Details values(20004, 'Viswanath', 'Sales Representative', 63001, '03-mar-2021', 30000.00, 2001);
+INSERT INTO EMPLOYEE_DETAILS values(20005, 'Ajay Ganesh', 'Developer', 63101, '27-mar-2021', 45000.00, 3001);
+INSERT INTO EMPLOYEE_DETAILS values(20006, 'Surya', 'Developer', 63101, '27-apr-2021', 39000.00, 3001);
+INSERT INTO EMPLOYEE_DETAILS values(20007, 'John', 'Developer', 63101, '27-may-2021', 50000.00, 3001);
+INSERT INTO EMPLOYEE_DETAILS values(20008, 'Eswar', 'Designer', 63501, '01-apr-2021', 45000.00, 4001);
+INSERT INTO EMPLOYEE_DETAILS values(20009, 'Raj', 'Designer', 63501, '27-nov-2021', 35000.00, 4001);
+INSERT INTO EMPLOYEE_DETAILS values(20010, 'John', 'Intern', 34001, '27-apr-2021', 20000.00, 5001);
+
+// Query for selecting the salaries of all the employees along with EMP_ID, EMP_NAME from the “Employee Details” table.
+
+select Emp_Id, Emp_Name, Salary from Employee_Details;
+
+// Query for selecting the unique designations of the employees from the table
+
+select distinct Job_Name FROM Employee_Details;
+
+// Query for updating the salary where the employee name is "Raj"
+
+update Employee_Details set salary = 39000.09 where Emp_Name = 'Raj';
+
+
+=========================================================================================================================================================
+
+
+QUESTION-2:
+----------
+
+
+show user							//	--> shows the current user or database
+
+create user Football identified by system;	//	--> creates a database or user with name as "Football"
+
+alter user Employee identified by Football123;	//	--> Modifies the password as Football123
+
+grant create session to Football;			//	--> Grants the create session permission to Football
+
+grant create table to Football;			//	--> Grants the create table permission to Football
+
+grant unlimited tablespace to Football;		//	--> Grants unlimited table space to Football.
+
+connect Football/Football123;				//	--> Connects with the Football database.
+
+
+
+// Query for creating a Football_Venue table with Venue_Id, Venue_Name, City_id, Capacity;
+
+ create table Football_Venue (Venue_Id number(5), Venue_Name varchar2(20), City_Id number(5), Capacity number(7));
+
+// Query for inserting 10 records of data into table Football_Venue
+
+INSERT INTO Football_Venue values (20001, 'France', 10003, 42115);
+INSERT INTO Football_Venue values (20002, 'Italy', 10004, 52115);
+INSERT INTO Football_Venue values (20003, 'Argentina', 10001, 60115);
+INSERT INTO Football_Venue values (20004, 'Portugal', 10010, 30115);
+INSERT INTO Football_Venue values (20005, 'Germany', 10009, 430115);
+INSERT INTO Football_Venue values (20006, 'United Kingdom', 10012, 330115);
+INSERT INTO Football_Venue values (20007, 'United Kingdom', 10033, 33849);
+INSERT INTO Football_Venue values (20008, 'Russia', 10045, 23849);
+INSERT INTO Football_Venue values (20009, 'Australia', 11065, 33399);
+INSERT INTO Football_Venue values (20010, 'Japan', 12064, 53399);
+
+
+// Query for counting the number of venues of the football world cup
+
+select count(*) from Football_Venue;
+
+// Query to list all the venue names and capacities in the format of “Location” and “Volume”.
+
+select Venue_Name as Location, Capacity as Volume from Football_Venue;
+
+// Query to delete all the names where venue_name is australia.
+
+delete from Football_Venue where Venue_Name = 'Australia';
