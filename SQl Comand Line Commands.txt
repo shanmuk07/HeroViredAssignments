@@ -1,0 +1,100 @@
+// connect;	---> used to connect the system database
+
+show user;	---> shows the list of users
+
+connect system/system;	---> It will be connected to the system database;
+
+create user Shanmukh identified by system;	--->	can used to create new user in database with user_name as "Shanmukh" and password as  "system"
+
+alter user Shanmukh identified by system123;	---> can used to assign new password to the user_name Shanmukh
+
+grant create session to Shanmukh;	--->	giving permission to create sessions to Shanmukh
+
+grant create table to Shanmukh;	--->	giving permission to create tables to Shanmukh
+
+grant unlimited tablespace to Shanmukh;	--->	this will give unlimited table space.
+
+grant create role to Shanmukh		---> giving permission to create roles to Shanmukh
+
+connect Shanmukh/system123;		---> will be connected to the shanmukh databse
+
+create role student;			---> the role "student" will be created.
+
+grant student to Shanmukh;		---> the role student will be assigned to shanmukh;
+
+drop user Shanmukh;	--->	deletes the user with "Shanmukh" as user_name;
+
+drop user user_name cascade	--->	
+
+data types: number, varchar, date.
+
+
+commands:
+--------
+
+DDL:
+---
+
+create table table_name(col1 data_type, col2 datatype..);
+
+desc table_name
+
+rename table_name to new_table_name
+
+alter table table_name add column_name varchar(20);
+
+alter table table_name drop column column_name;
+
+alter table table_name modify column new_data_type;
+
+truncate table table_name;
+
+drop table table_name;
+
+DML:
+---
+select * from student;
+
+insert into student values(20002, 'Ajay', 'Keelu', '26-nov-01', 8888888888);
+
+insert into student values(&Roll, &First_Name, &Last_Name, &DOB, &Phone);
+
+update student set first_name = 'Ajay Ganesh' where roll=20002;
+
+select roll, First_Name, Phone from student;
+
+delete from student where roll=20004;
+
+
+Example:
+
+
+create table Emp(EMP_ID number(5), EMP_NAME varchar2(20), Department varchar2(20), Age number(3), Gender varchar2(10), Salary number(7, 2));
+
+insert into Emp values(&EMP_ID, &EMP_NAME, &Department, &AGE, &GENDER, &SALARY);
+
+select EMP_ID, EMP_NAME, DEPARTMENT, SALARY from EMP;
+
+select EMP_ID, EMP_NAME, DEPARTMENT, SALARY from EMP where gender = 'Female' or salary > 56000.00;
+
+select EMP_ID, EMP_NAME, DEPARTMENT, SALARY from EMP where gender = 'Female' and salary > 56000.00;
+
+select EMP_ID, EMP_NAME, DEPARTMENT, SALARY from EMP where gender != 'Male';
+
+select EMP_ID, EMP_NAME, DEPARTMENT, SALARY from EMP where Emp_Name like ('%h');
+
+select EMP_ID, EMP_NAME, DEPARTMENT, SALARY from EMP where Emp_Id in ('20000', '20002');
+
+select EMP_ID, EMP_NAME, DEPARTMENT, SALARY from EMP where salary between 57000 and 73000;
+
+
+
+
+
+
+
+
+
+
+
+
