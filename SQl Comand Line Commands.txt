@@ -89,7 +89,11 @@ select EMP_ID, EMP_NAME, DEPARTMENT, SALARY from EMP where salary between 57000 
 
 
 
+create table student(Roll number(6) unique, Name varchar2(20) not null, Branch varchar2(20));
 
+create table Bank(account_number number(15) primary key, IFSC code varchar2(20) default 'sbi094959', Name varchar2(20));
+
+create table Patient(blood_group varchar2(20) check('a+ve', 'a-ve', 'ab', 'b+ve', 'b-ve', 'o+ve', 'o-ve'));
 
 
 
