@@ -1,0 +1,51 @@
+
+CREATE TABLE Worker_Details(Worker_ID number(4), First_Name varchar2(20), Last_Name varchar2(20), Salary number(10, 2), Joining_Date timestamp, Department varchar2(10));
+
+insert into Worker_Details values(001,'Monika','Arora',100000,to_timestamp('2014-02-20 09:00:00','yyyy-mm-dd hh24:mi:ss'),'HR');
+
+insert into worker values(003,'Vishal','Singhal',300000,to_timestamp('2014-02-20 09:00:00','yyyy-mm-dd hh24:mi:ss'),'HR');
+
+insert into worker values(004,'Amitabh','Singh',500000,to_timestamp('2014-02-11 09:00:00','yyyy-mm-dd hh24:mi:ss'),'Admin');
+
+insert into worker values(005,'Vivek','Bhati',500000,to_timestamp('2014-06-11 09:00:00','yyyy-mm-dd hh24:mi:ss'),'Admin');
+
+insert into worker values(006,'Vipul','Diwan',200000,to_timestamp('2014-06-11 09:00:00','yyyy-mm-dd hh24:mi:ss'),'Account');
+
+insert into worker values(007,'Sathish','Kumar',75000,to_timestamp('2014-01-20 09:00:00','yyyy-mm-dd hh24:mi:ss'),'Account');
+
+insert into worker values(008,'Geetika','Chauhan',90000,to_timestamp('2014-04-11 09:00:00','yyyy-mm-dd hh24:mi:ss'),'Admin');
+
+
+// Query for selecting first name and renaming as last name
+
+select First_Name as Worker_Name from Worker_Details;
+
+// Query to find the position of the alphabet (‘a’) in the first name column ‘Amitabh’ from the Worker table.
+
+SELECT INSTR(first_name, 'a') as position_of_a FROM Worker_Detaisl WHERE First_Name = 'Amitabh';
+
+// Query to print the FIRST_NAME from the Worker table after replacing ‘a’ with ‘A’.
+
+SELECT REPLACE(First_Name, 'a', 'A') as First_Name FROM Worker_Details;
+
+// Query to print all Worker details from the Worker table order by FIRST_NAME Ascending.
+
+SELECT * FROM Worker_Details ORDER BY FIRST_NAME ASC;
+
+// Query to print all Worker details from the Worker table order by FIRST_NAME Ascending and DEPARTMENT Descending.
+
+SELECT * FROM Worker_Details ORDER BY First_Name ASC, Department DESC;
+
+// Query to print details for Workers with the first name as “Vipul” and “Satish” from the Worker table.
+
+SELECT * FROM Worker_Details WHERE First_Name IN ('Vipul', 'Satish');
+
+// Query to print details of Workers with DEPARTMENT name as “Admin”
+
+SELECT * FROM Worker_Details WHERE DEPARTMENT = 'Admin';
+
+// 
+
+SELECT * FROM Worker_Details WHERE First_Name LIKE '%a%';
+
+
