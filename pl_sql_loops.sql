@@ -9,3 +9,16 @@ exit when i > 10;
 end loop;
 end;
 /
+
+
+declare
+i number;
+begin
+i := 1;
+while i <= 10
+loop
+dbms_output.put_line('i is '||i);
+i := i+1;
+end loop;
+end;
+/
